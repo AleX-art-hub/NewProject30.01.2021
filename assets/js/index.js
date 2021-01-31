@@ -105,16 +105,20 @@ function handlerFun2(e){
 
 //Poluchaem blocki
 const blocks = document.querySelectorAll('.changeColor');
+
 //1 zadanie: po cliku izmenit cvet
+
 for(let elem of blocks){
-    elem.addEventListener("click", funChangeColor1);
+    elem.insertAdjacentHTML("afterbegin", '<button class="remove_elem">X</button>');
+    elem.firstChild.onclick = ()=>elem.remove();
+    elem.addEventListener('click', funChangeColor1);
 }
 function funChangeColor1(e){
-    e.target.style.backgroundColor = "red";
-    e.target.addEventListener("click", funChangeColor1);
+    e.target.style.backgroundColor = 'red';
+    e.target.addEventListener('click', funChangeColor2);
 }
 function funChangeColor2(e){
-    e.target.style.backgroundColor = "gray";
-    e.target.removeEventListener("click", funChangeColor2);
-    e.target.addEventListener("click", funChangeColor1);
+    e.target.style.backgroundColor = 'black';
+    e.target.removeEventListener('click', funChangeColor2);
+    e.target.addEventListener('click', funChangeColor1);
 }
