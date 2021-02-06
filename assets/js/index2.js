@@ -5,7 +5,7 @@ document.getElementById('id1').onclick=function (){
     document.getElementById('id2').hidden = true; //tak koroche
 }*/
 
-//"RICHAG"
+/*//"RICHAG"
 let slider = document.querySelector('.slider');
 let thumb = document.querySelector('.thumb');
 thumb.onmousedown = function(event){
@@ -29,4 +29,23 @@ thumb.onmousedown = function(event){
         document.removeEventListener('mousemove', onMouseMoveAction);
     }
 }
+*/
 
+
+/* Home Work
+Dan element div s id='elem'
+- Dobavit emu class "www."
+- Udalit u nego class "www"
+- Proverit 
+-
+*/ 
+let elem=document.getElementById('elem');
+elem.classList.add('www');
+elem.classList.remove('www');
+let isContain = elem.classList.contains('www');
+console.log('');
+elem.innerText= "Hello!";
+elem.addEventListener("click", hello);
+function hello(event){
+    alert('Element clicked');
+}
